@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0C26D2A4-7734-34C7-B95F-E4D2E1E61CB5}</ProjectGuid>
+    <RootNamespace>MusicPlayer</RootNamespace>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.22621.0</WindowsTargetPlatformMinVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolset>v143</PlatformToolset>
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>MusicPlayer</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolset>v143</PlatformToolset>
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>MusicPlayer</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(QtMsBuild)\qt_defaults.props" Condition="Exists('$(QtMsBuild)\qt_defaults.props')" />
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <QtInstall>6.7.0_msvc2019_64</QtInstall>
+    <QtModules>core;gui;network;widgets;multimedia;sql</QtModules>
+  </PropertyGroup>
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <QtInstall>6.7.0_msvc2019_64</QtInstall>
+    <QtModules>core;gui;network;widgets;multimedia;sql</QtModules>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') OR !Exists('$(QtMsBuild)\Qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MusicPlayer</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MusicPlayer</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;release;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ObjectFileName>release\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName></ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(QTDIR)\lib\Qt6EntryPoint.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>$(OutDir)\MusicPlayer.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>./$(Configuration)/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>$(Configuration)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtRcc>
+      <NoZstd>true</NoZstd>
+      <Compression>default</Compression>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <InitFuncName>res</InitFuncName>
+      <QtRccDir>$(Configuration)</QtRccDir>
+      <QtRccFileName>qrc_%(Filename).cpp</QtRccFileName>
+    </QtRcc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QtUicDir>$(ProjectDir)</QtUicDir>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;debug;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ObjectFileName>debug\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(QTDIR)\lib\Qt6EntryPointd.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\MusicPlayer.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>./$(Configuration)/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>$(Configuration)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QtUicDir>$(ProjectDir)</QtUicDir>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
+    <QtRcc>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <NoZstd>true</NoZstd>
+      <Compression>default</Compression>
+      <InitFuncName>res</InitFuncName>
+      <QtRccDir>$(Configuration)</QtRccDir>
+      <QtRccFileName>qrc_%(Filename).cpp</QtRccFileName>
+    </QtRcc>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\control\allControl\allcontrol.cpp" />
+    <ClCompile Include="src\control\customItemDelegate\buttondelegate.cpp" />
+    <ClCompile Include="src\model\cache\cache.cpp" />
+    <ClCompile Include="src\control\playList\controlplaylist.cpp" />
+    <ClCompile Include="src\control\customItemDelegate\customitemdelegate.cpp" />
+    <ClCompile Include="src\model\database\database.cpp" />
+    <ClCompile Include="src\control\displayList\displaylist.cpp" />
+    <ClCompile Include="src\model\netWork\downloadfile.cpp" />
+    <ClCompile Include="src\model\importMusic\importlocalmusic.cpp" />
+    <ClCompile Include="src\view\Lyric\lyric.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainwindow.cpp" />
+    <ClCompile Include="src\model\playList\playlist.cpp" />
+    <ClCompile Include="src\view\tableView\playlistview.cpp" />
+    <ClCompile Include="src\control\playList\startplaymusic.cpp" />
+    <ClCompile Include="src\view\volume\volume.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MessageStruct.h" />
+    <QtMoc Include="src\control\allControl\allcontrol.h" />
+    <QtMoc Include="src\control\customItemDelegate\buttondelegate.h" />
+    <QtMoc Include="src\model\cache\cache.h" />
+    <QtMoc Include="src\control\playList\controlplaylist.h" />
+    <QtMoc Include="src\control\customItemDelegate\customitemdelegate.h" />
+    <QtMoc Include="src\model\database\database.h" />
+    <QtMoc Include="src\control\displayList\displaylist.h" />
+    <QtMoc Include="src\model\netWork\downloadfile.h" />
+    <QtMoc Include="src\model\importMusic\importlocalmusic.h" />
+    <QtMoc Include="src\view\Lyric\lyric.h" />
+    <QtMoc Include="mainwindow.h" />
+    <QtMoc Include="src\model\playList\playlist.h" />
+    <QtMoc Include="src\view\tableView\playlistview.h" />
+    <QtMoc Include="src\control\playList\startplaymusic.h" />
+    <QtMoc Include="src\view\volume\volume.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="debug\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -Zi -MDd -std:c++17 -utf-8 -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E $(QTDIR)\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;$(IntDir)\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\moc_predefs.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="release\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -O2 -MD -std:c++17 -utf-8 -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E $(QTDIR)\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;$(IntDir)\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\moc_predefs.h;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="src\view\Lyric\lyric.ui" />
+    <QtUic Include="mainwindow.ui" />
+    <QtUic Include="src\view\tableView\playlistview.ui" />
+    <QtUic Include="src\view\volume\volume.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\statusImage\24gl-repeatOnce2 (1).png" />
+    <None Include="image\statusImage\24gl-repeatOnce2.png" />
+    <None Include="image\myMusic\Untitled1 (2).png" />
+    <None Include="image\myMusic\Untitled1 (3).png" />
+    <None Include="image\titleImage\VIP (1).png" />
+    <None Include="image\titleImage\VIP.png" />
+    <None Include="image\creatSonglist\add.png" />
+    <None Include="image\titleImage\backPage.png" />
+    <None Include="image\titleImage\blue.png" />
+    <None Include="image\myMusic\cd.png" />
+    <None Include="image\myMusic\down.png" />
+    <None Include="image\myMusic\down_hover.png" />
+    <None Include="image\myMusic\download.png" />
+    <None Include="image\statusImage\friend-hover.png" />
+    <None Include="image\statusImage\friend.png" />
+    <None Include="image\titleImage\green.png" />
+    <None Include="image\statusImage\handle.png" />
+    <None Include="image\statusImage\handle2.png" />
+    <None Include="image\statusImage\handle3.png" />
+    <None Include="image\titleImage\headImage.jpg" />
+    <None Include="image\statusImage\lastMusic-hover.png" />
+    <None Include="image\statusImage\lastMusic.png" />
+    <None Include="image\statusImage\last_unselected.png" />
+    <None Include="image\statusImage\like-click.png" />
+    <None Include="image\statusImage\like-hover.png" />
+    <None Include="image\statusImage\like.png" />
+    <None Include="image\statusImage\list-loop-hover.png" />
+    <None Include="image\statusImage\list-loop.png" />
+    <None Include="image\statusImage\listCycle.png" />
+    <None Include="image\statusImage\listCycle_hover.png" />
+    <None Include="image\statusImage\listRepeat-hover.png" />
+    <None Include="image\statusImage\listRepeat.png" />
+    <None Include="image\statusImage\logo.ico" />
+    <None Include="image\creatSonglist\loveMusic.png" />
+    <None Include="image\statusImage\lyric-hover.png" />
+    <None Include="image\statusImage\lyric.png" />
+    <None Include="image\titleImage\max.png" />
+    <None Include="image\titleImage\maxHover.png" />
+    <None Include="image\titleImage\meaasgeHover.png" />
+    <None Include="image\titleImage\message.png" />
+    <None Include="image\titleImage\messageHover.png" />
+    <None Include="image\titleImage\min.png" />
+    <None Include="image\titleImage\minHover.png" />
+    <None Include="image\titleImage\mini.png" />
+    <None Include="image\titleImage\miniHover.png" />
+    <None Include="image\statusImage\nextMusic-hover.png" />
+    <None Include="image\statusImage\nextMusic.png" />
+    <None Include="image\titleImage\nextPage.png" />
+    <None Include="image\statusImage\next_unselected.png" />
+    <None Include="image\statusImage\novolume-hover.png" />
+    <None Include="image\statusImage\novolume.png" />
+    <None Include="image\statusImage\pause.png" />
+    <None Include="image\statusImage\pause_unselected.png" />
+    <None Include="image\titleImage\pick.png" />
+    <None Include="image\statusImage\play-hover.png" />
+    <None Include="image\statusImage\play.png" />
+    <None Include="image\statusImage\play_cycle.png" />
+    <None Include="image\statusImage\play_cycle_hover.png" />
+    <None Include="image\statusImage\playlist-hover.png" />
+    <None Include="image\statusImage\playlist.png" />
+    <None Include="image\titleImage\quit.png" />
+    <None Include="image\titleImage\quitHover.png" />
+    <None Include="image\myMusic\recentPlay.png" />
+    <None Include="image\titleImage\red.png" />
+    <QtRcc Include="res.qrc" />
+    <None Include="image\titleImage\restore.png" />
+    <None Include="image\titleImage\restoreHover.png" />
+    <None Include="image\titleImage\searchImage.png" />
+    <None Include="image\titleImage\separate.png" />
+    <None Include="image\serach_local.png" />
+    <None Include="image\titleImage\set.png" />
+    <None Include="image\titleImage\set2.png" />
+    <None Include="image\titleImage\set3.png" />
+    <None Include="image\titleImage\setHover.png" />
+    <None Include="image\titleImage\setHover3.png" />
+    <None Include="image\statusImage\shuffle.png" />
+    <None Include="image\statusImage\shufflePlay-hover.png" />
+    <None Include="image\statusImage\shufflePlay.png" />
+    <None Include="image\statusImage\shuffle_hover.png" />
+    <None Include="image\statusImage\shunxu.png" />
+    <None Include="image\statusImage\shunxuPlay-hover.png" />
+    <None Include="image\statusImage\shunxuPlay.png" />
+    <None Include="image\statusImage\shunxu_hover.png" />
+    <None Include="image\statusImage\singeCycle_hover.png" />
+    <None Include="image\statusImage\singleCycle-hover.png" />
+    <None Include="image\statusImage\singleCycle.png" />
+    <None Include="image\titleImage\skin.png" />
+    <None Include="image\titleImage\skinHover.png" />
+    <None Include="image\statusImage\unKnowSinger.png" />
+    <None Include="image\titleImage\voice_search.png" />
+    <None Include="image\statusImage\volume-hover.png" />
+    <None Include="image\statusImage\volume.png" />
+    <None Include="image\titleImage\yellow.png" />
+    <None Include="image\statusImage\yinxiao-hover.png" />
+    <None Include="image\statusImage\yinxiao.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

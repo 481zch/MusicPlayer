@@ -1,0 +1,5 @@
+﻿  Generate moc_predefs.h
+D:\code_software\visual_studio_2022\ide\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(254,5): warning MSB8064: 项“debug\moc_predefs.h.cbt”的自定义生成成功，但指定的依赖项“c:\users\33105\desktop\version1\musicplayer\debug\moc_predefs.h.cbt”不存在。这可能会导致增量生成无法正常工作。
+  Moc'ing src\control\customItemDelegate\buttondelegate.h...
+   moc: C:\Users\33105\Desktop\version1\MusicPlayer\src\control\customItemDelegate\buttondelegate.h: No such file
+C:\Users\33105\AppData\Local\QtMsBuild\qt_globals.targets(264,5): error MSB4181: “QtRunWork”任务返回了 false，但未记录错误。
